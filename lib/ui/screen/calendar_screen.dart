@@ -130,7 +130,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                 Container(
                   width: 100,
                   child: Text(
-                    'Mark as Color',
+                    'Mark Color',
                   ),
                 ),
                 Container(

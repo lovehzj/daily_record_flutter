@@ -1,13 +1,13 @@
 import 'package:daily_record_flutter/module/date_record.dart';
 import 'package:daily_record_flutter/persistent/persistent_api.dart';
-import 'package:daily_record_flutter/persistent/persistent_memory.dart';
+import 'package:daily_record_flutter/persistent/persistent_db.dart';
 
 class Persistent {
   static PersistentApi? api;
 
   static Future<PersistentApi> getApi() async {
     if (api == null) {
-      api = new PersistentMemory();
+      api = await PersistentDb.getInstance();
     }
     return api!;
   }
