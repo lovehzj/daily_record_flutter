@@ -78,7 +78,7 @@ class PersistentDb implements PersistentApi {
   Future<void> deleteRecordKey(DateTime dateTime, String key) async {
     var aux = await getInstance();
     aux.database.delete(TABLE_DAILY_RECORD,
-        where: 'day = ?', whereArgs: [dateTime.toString()]);
+        where: 'day = ? and key = ? ', whereArgs: [dateTime.toString(), key]);
   }
 
   @override
